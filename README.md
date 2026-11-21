@@ -1,11 +1,17 @@
-# Little Meadow — WebGL2 countryside demo
+# Cozy Country — WebGL2 field study
 
-A small original countryside diorama built with React, React Three Fiber and Three.js. Drag to orbit, zoom to explore, and switch morning/dusk lighting; the pond uses an animated GLSL shader.
+A small browser diorama built with React, Three.js and React Three Fiber. It uses compacted Cattail and RiverRock meshes extracted from the supplied game package, plus re-authored GLSL for wind sway and animated water. The GitHub Pages workflow builds and deploys the Vite app from `main`.
 
-Unofficial visual demo; not affiliated with Cozy Country or Protopop Games. No APK, extracted game models, textures, shaders, or other game files are included. Scene geometry and shader are original procedural work.
+The user states they own or have permission to republish the referenced assets. This is an unofficial fan-made study, not affiliated with Cozy Country or its publisher. Textures and original game shader source are not included; the plant and water shaders are new implementations.
 
-Live: https://shifatmasud.github.io/cozy-country-webgl2-demo/
+## Try it
 
-The GitHub Pages entry point uses a pinned import map for React, Three.js, React Three Fiber and Drei. Editable JSX sources are in `src/`; local production build: `pnpm install && pnpm build`.
+https://shifatmasud.github.io/cozy-country-webgl2-demo/
 
-Original demo code is MIT licensed. Cozy Country's name and marks belong to their owner.
+Drag to orbit, scroll or pinch to zoom, and use the dusk control to shift the lighting. The demo requires a current browser with WebGL2.
+
+## Source
+
+- `src/main.jsx` — scene interface and dusk control.
+- `src/asset-scene.jsx` — React Three Fiber scene and custom wind/water shaders.
+- `assets.js` — compact position/index buffers converted from extracted OBJ meshes.
