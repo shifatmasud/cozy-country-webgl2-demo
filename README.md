@@ -8,11 +8,11 @@ A small, original countryside diorama built with React, React Three Fiber and Th
 
 Open the GitHub Pages site: `https://shifatmasud.github.io/cozy-country-webgl2-demo/`
 
-The page loads React, Three.js and React Three Fiber from esm.sh, so it needs an internet connection and a browser with WebGL2 enabled. Drag to orbit, scroll/pinch to zoom, and use **Stay for dusk** to change the lighting.
+The hosted page is a no-build static entry point and loads React, Three.js and React Three Fiber from esm.sh. It needs an internet connection and a browser with WebGL2 enabled. Drag to orbit, scroll/pinch to zoom, and use **Stay for dusk** to change the lighting.
 
 ## Source and local development
 
-The readable React/JSX project is in `src/` and uses pinned dependencies in `package.json`.
+The readable React/JSX project is in `src/`, with pinned dependencies in `package.json`.
 
 ```bash
 pnpm install
@@ -20,7 +20,7 @@ pnpm dev
 pnpm build
 ```
 
-`index.html` is also a no-build Pages entry point. Its procedural scene is written with `React.createElement` so GitHub Pages can serve it directly from the root branch.
+GitHub Pages serves the root `index.html` directly from `main`; that page contains an equivalent browser-native module version of the scene so it does not depend on a build step or workflow permissions.
 
 ## License
 
