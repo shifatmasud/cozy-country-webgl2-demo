@@ -1,24 +1,27 @@
-# Little Meadow — Cozy Country web demo
+# Little Meadow — Cozy Country-inspired WebGL2 demo
 
-A small, original, interactive countryside diorama built with React, React Three Fiber, Three.js and a custom GLSL water shader. Three.js renders with WebGL2. Orbit the island, zoom in, and switch from morning to dusk.
+A small, original countryside diorama built with React, React Three Fiber and Three.js. It renders as an interactive WebGL2 scene: orbit the island, zoom in, and switch the light and animated GLSL water from morning to dusk.
 
-**This is an unofficial fan-style visual demo, not affiliated with Cozy Country or Protopop Games.** It contains no Cozy Country APK, extracted game models, textures, shaders, or other game files. The cottage, trees, flowers, terrain, animals and water are original procedural geometry/materials made for this project.
+**This is an unofficial visual demo, not affiliated with Cozy Country or Protopop Games.** The repository contains no APK, extracted game models, textures, shaders, or other game files. The terrain, cottage, trees, flowers, animals and water shader are original procedural work.
 
-## Run locally
+## Try it
+
+Open the GitHub Pages site: `https://shifatmasud.github.io/cozy-country-webgl2-demo/`
+
+The page loads React, Three.js and React Three Fiber from esm.sh, so it needs an internet connection and a browser with WebGL2 enabled. Drag to orbit, scroll/pinch to zoom, and use **Stay for dusk** to change the lighting.
+
+## Source and local development
+
+The readable React/JSX project is in `src/` and uses pinned dependencies in `package.json`.
 
 ```bash
 pnpm install
 pnpm dev
+pnpm build
 ```
 
-Build locally with `pnpm build`. The `main` branch is configured to build and deploy `dist/` with GitHub Actions. The live URL will be `https://shifatmasud.github.io/cozy-country-webgl2-demo/` after the first successful Pages deployment.
+`index.html` is also a no-build Pages entry point. Its procedural scene is written with `React.createElement` so GitHub Pages can serve it directly from the root branch.
 
-## Controls
+## License
 
-- Drag to orbit the island.
-- Scroll or pinch to zoom.
-- Use **Stay for dusk** to change the light and water color.
-
-## Credits
-
-All demo code and procedural visuals in this repository are original. Cozy Country is referenced only to explain the visual inspiration; its name and any related marks belong to their respective owner.
+Original demo code is MIT licensed. Cozy Country is referenced only to explain the visual inspiration; its name and marks belong to their respective owner.
