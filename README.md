@@ -1,27 +1,11 @@
 # Little Meadow — Cozy Country-inspired WebGL2 demo
 
-A small, original countryside diorama built with React, React Three Fiber and Three.js. It renders as an interactive WebGL2 scene: orbit the island, zoom in, and switch the light and animated GLSL water from morning to dusk.
+A small, original countryside diorama made with React, React Three Fiber and Three.js. Orbit the island, zoom in, and use **Stay for dusk** to change the light. The pond uses an animated GLSL shader.
 
-**This is an unofficial visual demo, not affiliated with Cozy Country or Protopop Games.** The repository contains no APK, extracted game models, textures, shaders, or other game files. The terrain, cottage, trees, flowers, animals and water shader are original procedural work.
+**Unofficial visual demo; not affiliated with Cozy Country or Protopop Games.** No APK, extracted game models, textures, shaders, or other game files are included. The scene is original procedural work.
 
-## Try it
+Live demo: https://shifatmasud.github.io/cozy-country-webgl2-demo/
 
-Open the GitHub Pages site: `https://shifatmasud.github.io/cozy-country-webgl2-demo/`
+The GitHub Pages entry point uses an import map for pinned React/Three.js ESM modules and includes the standalone R3F playground. The editable JSX project remains in `src/` and can be built locally with `pnpm install` and `pnpm build`.
 
-The hosted page is a no-build static entry point and loads React, Three.js and React Three Fiber from esm.sh. It needs an internet connection and a browser with WebGL2 enabled. Drag to orbit, scroll/pinch to zoom, and use **Stay for dusk** to change the lighting.
-
-## Source and local development
-
-The readable React/JSX project is in `src/`, with pinned dependencies in `package.json`.
-
-```bash
-pnpm install
-pnpm dev
-pnpm build
-```
-
-GitHub Pages serves the root `index.html` directly from `main`; that page contains an equivalent browser-native module version of the scene so it does not depend on a build step or workflow permissions.
-
-## License
-
-Original demo code is MIT licensed. Cozy Country is referenced only to explain the visual inspiration; its name and marks belong to their respective owner.
+Original demo code is MIT licensed. Cozy Country's name and marks belong to their respective owner.
