@@ -3,13 +3,28 @@ import { createRoot } from 'react-dom/client';
 import AssetScene from './asset-scene.jsx';
 import './style.css';
 
+class SceneBoundary extends React.Component {
+  state = { failed: false };
+  static getDerivedStateFromError() { return { failed: true }; }
+  componentDidCatch(error) {
+    console.error('3D scene could not start', error);
+    this.props.onError?.();
+  }
+  render() { return this.state.failed ? this.props.fallback : this.props.children; }
+}
+
 function App() {
   const [dusk, setDusk] = useState(false);
   const [webgl2, setWebgl2] = useState(null);
   return (
     <main className={`app ${dusk ? 'dusk' : ''}`}>
       <div className="canvas-wrap" aria-label="Interactive 3D countryside scene">
-        <AssetScene dusk={dusk} onWebgl2={setWebgl2} />
+        <SceneBoundary
+          onError={() => setWebgl2(false)}
+          fallback={<div className="scene-fallback">This browser couldn’t start a WebGL2 scene.</div>}
+        >
+          <AssetScene dusk={dusk} onWebgl2={setWebgl2} />
+        </SceneBoundary>
       </div>
       <header className="topbar">
         <a className="brand" href="#home" aria-label="Cozy Country field study"><span className="brand-mark">✿</span><span>cozy country</span></a>
