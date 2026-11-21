@@ -65,7 +65,7 @@ function Scene({ dusk }) {
     <ambientLight intensity={dusk ? .5 : .85} />
     <directionalLight position={[-4,9,5]} intensity={dusk ? 1.6 : 2.2} color={dusk ? '#ffd5a0' : '#fff3cf'} castShadow />
     <mesh position={[0,-.55,0]} receiveShadow><cylinderGeometry args={[6.2,6.35,.6,80]} /><meshStandardMaterial color="#816c54" roughness={1} /></mesh>
-    <mesh position={[0,-.22,0]} receiveShadow><circleGeometry args={[6.1,80]} /><meshStandardMaterial color={dusk ? '#425848' : '#76935b'} roughness={1} /></mesh>
+    <mesh position={[0,-.22,0]} rotation={[-Math.PI/2,0,0]} receiveShadow><circleGeometry args={[6.1,80]} /><meshStandardMaterial color={dusk ? '#425848' : '#76935b'} roughness={1} /></mesh>
     <Water dusk={dusk} />
     {[[.4,.24,1.8],[-1,.23,2.5],[1.5,.22,2.2],[2.6,.2,.6],[-2,.22,1.4],[3,.2,-.4]].map((p,i)=><Cattail key={i} position={p} scale={.75+(i%3)*.16} />)}
     {[[1,.13,-1.1],[-1.2,.13,-1.6],[2.4,.13,-1.8],[-3,.13,.1],[3.5,.13,1.4],[-2,.13,2.6]].map((p,i)=><RiverRock key={i} position={p} scale={.52+(i%3)*.12} />)}
